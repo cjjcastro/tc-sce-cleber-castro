@@ -7,8 +7,9 @@ import model.Product;
 public class Main {
 
 	public static void main(String[] args) {
-		View initialPage = new View();
-		initialPage.Run();
+		Controller control = new Controller();
+		View initialPage = new View(control);
+		initialPage.Run(control);
 	}
 
 }

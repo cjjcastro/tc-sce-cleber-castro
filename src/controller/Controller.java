@@ -1,13 +1,12 @@
 package controller;
 
-import view.InsertProductsView;
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Product;
 
 public class Controller {
-	private List<Product> data = new ArrayList<Product>();
+	public List<Product> data = new ArrayList<Product>();
 	
 	public List<Product> getData() {
 		return data;
@@ -17,13 +16,15 @@ public class Controller {
 		this.data.add(new Product(name, amount));
 	}
 	
-	public static void main(String[] args) {
-		
-		//InsertProductsView test = new InsertProductsView();
-		//test.Run();
-		Product p = new Product("test", 1);
-		System.out.println(p.getName());
-		
-		//AddProduct("test1", 0);
+	public void RemoveProduct(int id) {
+		this.data.remove(id);
+	}
+	
+	public void UpdateProduct(int id, String name, int amount) {
+		data.set(id, new Product(name, amount));
+	}
+	
+	public int GetProductIndex(Product product) {
+		return data.indexOf(product);
 	}
 }
