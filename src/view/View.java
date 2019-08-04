@@ -82,7 +82,7 @@ public class View extends JFrame {
 		int xAux = 42;
 		for (Product i : control.getData()) {
 			System.out.println(i.getName());
-			btnAux = new JButton(i.getName());
+			btnAux = new JButton(i.getName() + " - " + i.getAmount());
 			btnAux.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					//JOptionPane.showMessageDialog(null, i.getName());
